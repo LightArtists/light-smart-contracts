@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": false,
+    "es2021": true,
+    "mocha": true,
+    "node": true
+  },
+  "plugins": [
+    "import",
+    "chai-friendly"
+  ],
+  "extends": [
+    "standard",
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:import/recommended"
+  ],
+  "rules": {
+    "camelcase": ["error"],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [
+          "object",
+          ["builtin", "external"],
+          "parent",
+          "sibling",
+          "index",
+          "type"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "object-shorthand": "error",
+    "prefer-const": "error",
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }]
+  }
+}
