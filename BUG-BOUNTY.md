@@ -68,7 +68,7 @@ Rewards:
 - **High severity** — partial payout of the bug bounty (USD 2,000)
 - **Medium severity** — partial payout of the bug bounty (USD 1,000)
 - Every accepted problem report or typo will also receive
-  - @lightartists tee shirt
+  - @light_artists tee shirt
   - Public acknowledgement from the Light team and personally from the contract developer on Twitter (if you allow)
 
 Examples of impact:
