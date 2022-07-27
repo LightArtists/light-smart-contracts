@@ -28,7 +28,7 @@ Social engineering, XKCD#538 attacks, bringing down Ethereum Mainnet/Infura, and
 
 You may test this contract as deployed on Görli Testnet:
 
--  XXX @lightartists please put address here XXX
+-  https://goerli.etherscan.io/address/0x0cc90e441c5b3e15414b0ff5d0b702f07da1bc58
 
 ## Sensitivity
 
@@ -67,9 +67,8 @@ Rewards:
 - **Highest severity (first found)** —  a Meebit
 - **High severity** — partial payout of the bug bounty (USD 2,000)
 - **Medium severity** — partial payout of the bug bounty (USD 1,000)
-- Every accepted problem report will also receive
-  - xxx @lightartists add tee shirt if we have one xxx
-  - One Area NFT token from our other token drop
+- Every accepted problem report or typo will also receive
+  - @lightartists tee shirt
   - Public acknowledgement from the Light team and personally from the contract developer on Twitter (if you allow)
 
 Examples of impact:
@@ -103,7 +102,7 @@ Rules for bounty sponsor:
   * Yes, we will update the code and redeploy the contract. So, click :star: STAR and :eye: WATCH above on this repo for updates.
 
 - Taxes?
-  - If you earn so much money that you will need to fill out a tax form, then we will ask you to do so. This program is subject to the laws of Hong Kong.
+  - If you earn so much money that you will need to fill out a tax form, then we will ask you to do so. This program is subject to the laws of New York.
 
 ## Thank you
 
