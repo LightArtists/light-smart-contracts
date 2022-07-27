@@ -50,7 +50,7 @@ npm run coverage
 
 ## Contributing
 
-When the Area contracts are deployed, this repository will stay to provide documentation and context for the code. Test cases and documentation may be updated, but the code will be fixed.
+When the Light contracts are deployed, this repository will stay to provide documentation and context for the code. Test cases and documentation may be updated, but the code will be fixed.
 
 Please send pull requests to improve documentation and test cases. Please send issues for anything that might be improved.
 
