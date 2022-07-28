@@ -18,10 +18,9 @@ import "./vendor/openzeppelin-contracts-4.6.0-d4fb3a89f9d0a39c7ee6f2601d33ffbf30
 import "./ThreeChiefOfficersWithRoyalties.sol";
 import "./Packing.sol";
 
-/// @title  Light Annual Series 💡
+/// @title  Light 💡
 /// @notice This contract has reusable functions and is meant to be deployed multiple times to accommodate different
-///         Light collections. This instance has been deployed for the Light.art Annual Series. Not all functions are
-///         applicable.
+///         Light collections.
 /// @author William Entriken
 contract Light is ERC721, ThreeChiefOfficersWithRoyalties {
     /// @param startTime      effective beginning time for phase to take effect
