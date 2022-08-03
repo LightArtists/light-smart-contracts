@@ -2,6 +2,8 @@
 
 :moneybag: ACTIVE BUG BOUNTY, SEE THE FILE [BUG-BOUNTY.md](BUG-BOUNTY.md).
 
+Deployed: Ethereum Mainnet 0x06903cc35c37f90b4a9ef38b0b037262a327f83b
+
 ## Introduction
 
 **Light NFT contract**
