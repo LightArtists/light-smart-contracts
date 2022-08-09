@@ -36,6 +36,9 @@ abstract contract ThreeChiefOfficersWithRoyalties is IERC2981, ERC165 {
     /// @dev Revert with an error when attempting privileged access without being financial officer.
     error NotFinancialOfficer();
 
+    /// @dev The withdrawal operation failed on the receiving side.
+    error WithdrawFailed();
+
     /// @dev This throws unless called by the owner.
     modifier onlyOperatingOfficer() {
         if (msg.sender != _operatingOfficer) {
@@ -82,7 +85,10 @@ abstract contract ThreeChiefOfficersWithRoyalties is IERC2981, ERC165 {
         if (msg.sender != _financialOfficer) {
             revert NotFinancialOfficer();
         }
-        _financialOfficer.transfer(address(this).balance);
+        (bool success, ) = _financialOfficer.call{value: address(this).balance}("");
+        if (!success) {
+            revert WithdrawFailed();
+        }
     }
 
     /// @notice Get the chief executive officer
