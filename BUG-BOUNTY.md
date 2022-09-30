@@ -10,7 +10,7 @@
 
 Start time: July 27, 2022, Noon, UTC
 
-End time: July 29, 2002, Noon, UTC
+End time: July 29, 2022, Noon, UTC
 
 ## Sponsors
 
