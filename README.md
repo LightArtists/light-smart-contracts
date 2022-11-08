@@ -18,6 +18,37 @@ This is an ERC-721 NFT contract which provides the following features:
 3. Metadata is permanent and **unchangeable** after any drop is sold out and finalized. Conformance is made to `event PermanentURI(string, uint256)` expected by OpenSea.
 4. **Royalties** preferences are reported using [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981) and administrative control is reported using `function owner() returns (address)` with the intention that third-party marketplaces can use these to levy and remit royalties.
 
+Sales process for random drops:
+
+```mermaid
+stateDiagram-v2
+  [*] --> prepared: prepareDrop
+  prepared --> aborted: abortDrop
+  prepared --> prepared: setDropPhases
+  prepared --> selling: mintRandom
+  selling --> selling: setDropPhases
+  selling --> selling: mintRandom
+  selling --> finalized: finalizeRandomDrop
+  selling --> finalized: finalizeRandomDropAndIForgotThePassword
+  finalized --> finalized: freezeMetadataForDrop
+  finalized --> [*]: freezeMetadataForDrop
+```
+
+Sales process for non-random drops:
+
+```mermaid
+stateDiagram-v2
+  [*] --> prepared: prepareDrop
+  prepared --> aborted: abortDrop
+  prepared --> prepared: setDropPhases
+  prepared --> selling: mintChosen
+  selling --> selling: setDropPhases
+  selling --> selling: mintChosen
+  selling --> sold: mintChosen
+  sold --> sold: freezeMetadataForDrop
+  sold --> [*]: freezeMetadataForDrop
+```
+
 ## Deploy
 
 1. Deploy the NFT contract
