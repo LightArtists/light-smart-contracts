@@ -1,8 +1,8 @@
 # Light Ethereum Contracts
 
-:moneybag: ACTIVE BUG BOUNTY, SEE THE FILE [BUG-BOUNTY.md](BUG-BOUNTY.md).
+:moneybag: PROPOSED BUG BOUNTY, SEE THE FILE [BUG-BOUNTY.md](BUG-BOUNTY.md).
 
-Deployed: Ethereum Mainnet 0x06903cc35c37f90b4a9ef38b0b037262a327f83b
+Deployed: Ethereum Mainnet XXXXX
 
 ## Introduction
 
@@ -25,13 +25,17 @@ stateDiagram-v2
   [*] --> prepared: prepareDrop
   prepared --> aborted: abortDrop
   prepared --> prepared: setDropPhases
+  prepared --> prepared: setTokenURIBase
   prepared --> selling: mintRandom
   selling --> selling: setDropPhases
   selling --> selling: mintRandom
+  selling --> selling: setTokenURIBase
   selling --> finalized: finalizeRandomDrop
   selling --> finalized: finalizeRandomDropAndIForgotThePassword
-  finalized --> finalized: freezeMetadataForDrop
-  finalized --> [*]: freezeMetadataForDrop
+  finalized --> finalized: setTokenURIBase
+  finalized --> freezing: freezeMetadataForDrop
+  freezing --> freezing: freezeMetadataForDrop
+  freezing --> [*]: freezeMetadataForDrop
 ```
 
 Sales process for non-random drops:
@@ -41,12 +45,16 @@ stateDiagram-v2
   [*] --> prepared: prepareDrop
   prepared --> aborted: abortDrop
   prepared --> prepared: setDropPhases
+  prepared --> prepared: setTokenURIBase
   prepared --> selling: mintChosen
   selling --> selling: setDropPhases
   selling --> selling: mintChosen
+  selling --> selling: setTokenURIBase
   selling --> sold: mintChosen
-  sold --> sold: freezeMetadataForDrop
-  sold --> [*]: freezeMetadataForDrop
+  sold --> sold: setTokenURIBase
+  sold --> freezing: freezeMetadataForDrop
+  freezing --> freezing: freezeMetadataForDrop
+  freezing --> [*]: freezeMetadataForDrop
 ```
 
 ## Deploy
