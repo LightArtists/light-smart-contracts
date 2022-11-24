@@ -121,6 +121,16 @@ contract Light is ERC721, ThreeChiefOfficersWithRoyalties {
         }
     }
 
+    /// @notice Sets the URI for a drop that did not yet have its metadata frozen
+    /// @param  dropID       The identifier, or batch number, for the drop
+    /// @param  tokenURIBase A prefix to build each token's URI from
+    function setTokenURIBase(uint64 dropID, string calldata tokenURIBase) external onlyOperatingOfficer {
+        Drop storage drop = drops[dropID];
+        require(drop.quantityForSale > 0, "Light: this drop has not been prepared");
+        require(drop.quantityFrozenMetadata == 0, "Light: metadata freezing already started");
+        drop.tokenURIBase = tokenURIBase;
+    }
+
     /// @notice Mints a quantity of tokens, the related tokenURI is unknown until finalized
     /// @dev    This reverts unless there is randomness in this drop.
     /// @param  dropID             The identifier, or batch number, for the drop
