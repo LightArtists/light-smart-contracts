@@ -12,9 +12,9 @@ pragma solidity ^0.8.15; // code below expects that integer overflows will rever
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 */
 
-import "./vendor/openzeppelin-contracts-4.6.0-d4fb3a89f9d0a39c7ee6f2601d33ffbf30085322/contracts/token/ERC721/ERC721.sol";
-import "./vendor/openzeppelin-contracts-4.6.0-d4fb3a89f9d0a39c7ee6f2601d33ffbf30085322/contracts/utils/cryptography/MerkleProof.sol";
-import "./vendor/openzeppelin-contracts-4.6.0-d4fb3a89f9d0a39c7ee6f2601d33ffbf30085322/contracts/utils/Strings.sol";
+import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/token/ERC721/ERC721.sol";
+import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/utils/cryptography/MerkleProof.sol";
+import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/utils/Strings.sol";
 import "./ThreeChiefOfficersWithRoyalties.sol";
 import "./Packing.sol";
 

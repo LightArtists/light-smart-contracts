@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.15;
 
-import "./vendor/openzeppelin-contracts-4.6.0-d4fb3a89f9d0a39c7ee6f2601d33ffbf30085322/contracts/interfaces/IERC2981.sol";
-import "./vendor/openzeppelin-contracts-4.6.0-d4fb3a89f9d0a39c7ee6f2601d33ffbf30085322/contracts/utils/introspection/ERC165.sol";
+import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/interfaces/IERC2981.sol";
+import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/utils/introspection/ERC165.sol";
 
 /// @title  Three-party access control inspired by CryptoKitties. By default, the highest-privileged account will be the
 ///         same account that deploys this contract. ERC-2981 designates royalties to the CFO account. Uses an ownable
