@@ -120,7 +120,7 @@ abstract contract ThreeChiefOfficersWithRoyalties is IERC2981, ERC165 {
         return (_financialOfficer, royaltyAmount);
     }
 
-    /// @notice EIP-5313 (DRAFT) implementation
+    /// @notice EIP-5313 implementation
     /// @return The account that can control this contract
     function owner() public view returns (address) {
         return _executiveOfficer;
