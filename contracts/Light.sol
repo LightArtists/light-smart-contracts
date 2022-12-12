@@ -15,7 +15,6 @@ pragma solidity ^0.8.15; // code below expects that integer overflows will rever
 import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/token/ERC721/ERC721.sol";
 import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/utils/cryptography/MerkleProof.sol";
 import "./vendor/openzeppelin-contracts-4.8.0-49c0e4370d0cc50ea6090709e3835a3091e33ee2/contracts/utils/Strings.sol";
-import "./vendor/operator-filter-registry-1.3.0-28758583d1f5761c74474f4602151ffe3ca361fa/src/DefaultOperatorFilterer.sol";
 import "./ThreeChiefOfficersWithRoyalties.sol";
 import "./Packing.sol";
 
@@ -23,7 +22,7 @@ import "./Packing.sol";
 /// @notice This contract has reusable functions and is meant to be deployed multiple times to accommodate different
 ///         Light collections.
 /// @author William Entriken
-contract Light is DefaultOperatorFilterer, ERC721, ThreeChiefOfficersWithRoyalties {
+contract Light is ERC721, ThreeChiefOfficersWithRoyalties {
     /// @param startTime      effective beginning time for phase to take effect
     /// @param ethPrice       price in Wei for the sale
     /// @param accessListRoot Merkle root for addresses and quantities on an access list, or zero to indicate public
@@ -279,35 +278,6 @@ contract Light is DefaultOperatorFilterer, ERC721, ThreeChiefOfficersWithRoyalti
         Drop storage drop = drops[dropID];
         drop.unrevealedTokenURIOverride = newUnrevealedTokenURIOverride;
     }
-
-    // Allow OpenSea to deny this marketplace, definitely no conflict of interest
-    function setApprovalForAll(address operator, bool approved) public override onlyAllowedOperatorApproval(operator) {
-        super.setApprovalForAll(operator, approved);
-    }
-
-    // Allow OpenSea to deny this marketplace, definitely no conflict of interest
-    function approve(address operator, uint256 tokenId) public override onlyAllowedOperatorApproval(operator) {
-        super.approve(operator, tokenId);
-    }
-
-    // Allow OpenSea to deny this transfer
-    function transferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator(from) {
-        super.transferFrom(from, to, tokenId);
-    }
-
-    // Allow OpenSea to deny this transfer
-    function safeTransferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator(from) {
-        super.safeTransferFrom(from, to, tokenId);
-    }
-
-    // Allow OpenSea to deny this transfer
-    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data)
-        public
-        override
-        onlyAllowedOperator(from)
-    {
-        super.safeTransferFrom(from, to, tokenId, data);
-    }    
 
     /// @notice Hash a password to be used in a randomized drop
     /// @param  password The secret which will be hashed to prepare a drop
